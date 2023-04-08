@@ -1,4 +1,4 @@
-print("Welcome Anthony! How are you doing today?")
+print("Let's get coding!")
 
 vim.g.mapleader = " "
 
@@ -41,13 +41,14 @@ end)
 -- some
 vim.keymap.set("n", "<M-b>", ":Ex<CR>")
 
--- split screen and navigation
+-- split screen
 vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true })
+-- navigate between tabs
 vim.keymap.set("n", "<leader>h", ":wincmd h<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>l", ":wincmd l<CR>", { noremap = true })
 
 -- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+vim.keymap.set('n', '<leader>,', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>f', function()
 	require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -122,14 +123,14 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
 -- COMMENT
 require("nvim_comment").setup({
-	operator_mapping = "<leader>/"
+	operator_mapping = "<leader>c"
 })
 
 -- TERMINAL SETUP
 require("toggleterm").setup{
 	direction = "horizontal",
 	size = 15,
-	open_mapping = [[<M-j>]]
+	open_mapping = [[<leader>§]]
 }
 
 -- COLORSCHEME
