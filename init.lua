@@ -40,7 +40,7 @@ end)
 
 vim.keymap.set("n", "<C-S>", ":w<CR>")
 -- some
-vim.keymap.set("n", "<leader>e", ":Ex<CR>")
+vim.keymap.set("n", "<C-e>", ":Ex<CR>")
 
 -- split screen
 vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true })
@@ -67,7 +67,7 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 -- TREESITTER
 require'nvim-treesitter.configs'.setup {
-	ensure_installed = {"c", "lua", "vim", "go", "javascript", "typescript", "rust"},
+	ensure_installed = {"c", "lua", "vim", "go", "javascript", "typescript", "rust","python"},
 	highlight = {
 		enable = true,
 	}
