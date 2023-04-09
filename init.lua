@@ -38,8 +38,8 @@ require("packer").startup(function(use)
 }
 end)
 
+vim.keymap.set("n","<leader>r", ":GoRename<CR>")
 vim.keymap.set("n", "<C-S>", ":w<CR>")
--- some
 vim.keymap.set("n", "<C-e>", ":Ex<CR>")
 
 -- split screen
@@ -58,7 +58,7 @@ vim.keymap.set('n', '<leader>f', function()
     })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
-vim.keymap.set('n', '<leader>gd',':GoDoc', { noremap = true})
+vim.keymap.set('n', '<leader>gd',':GoDoc<CR>', { noremap = true})
 vim.keymap.set('n', '<leader>p', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<M-p>', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
