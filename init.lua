@@ -38,8 +38,9 @@ require("packer").startup(function(use)
 }
 end)
 
+vim.keymap.set("n", "<C-S>", ":w<CR>")
 -- some
-vim.keymap.set("n", "<M-b>", ":Ex<CR>")
+vim.keymap.set("n", "<leader>e", ":Ex<CR>")
 
 -- split screen
 vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true })
@@ -57,13 +58,13 @@ vim.keymap.set('n', '<leader>f', function()
     })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
+vim.keymap.set('n', '<leader>gd',':GoDoc', { noremap = true})
 vim.keymap.set('n', '<leader>p', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<M-p>', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-
 -- TREESITTER
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = {"c", "lua", "vim", "go", "javascript", "typescript", "rust"},
@@ -125,13 +126,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 require("nvim_comment").setup({
 	operator_mapping = "<leader>c"
 })
-
--- TERMINAL SETUP
-require("toggleterm").setup{
-	direction = "horizontal",
-	size = 15,
-	open_mapping = [[<leader>§]]
-}
 
 -- COLORSCHEME
 vim.cmd("colorscheme gruvbox")
