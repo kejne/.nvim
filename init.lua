@@ -37,7 +37,8 @@ require("packer").startup(function(use)
 	use "CreaturePhil/vim-handmade-hero",
 	use "yasuhiroki/github-actions-yaml.vim",
 	use "hashivim/vim-terraform",
-	use "towolf/vim-helm"
+	use "towolf/vim-helm",
+	use "ekalinin/Dockerfile.vim"
 }
 end)
 
