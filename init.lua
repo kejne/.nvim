@@ -34,7 +34,9 @@ require("packer").startup(function(use)
 	use {"akinsho/toggleterm.nvim", tag = '*' },
 	use "jhlgns/naysayer88.vim",
 	use "terrortylor/nvim-comment",
-	use "CreaturePhil/vim-handmade-hero"
+	use "CreaturePhil/vim-handmade-hero",
+	use "yasuhiroki/github-actions-yaml.vim",
+	use "hashivim/vim-terraform"
 }
 end)
 
