@@ -36,7 +36,8 @@ require("packer").startup(function(use)
 	use "terrortylor/nvim-comment",
 	use "CreaturePhil/vim-handmade-hero",
 	use "yasuhiroki/github-actions-yaml.vim",
-	use "hashivim/vim-terraform"
+	use "hashivim/vim-terraform",
+	use "towolf/vim-helm"
 }
 end)
 
