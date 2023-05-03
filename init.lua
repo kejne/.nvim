@@ -29,26 +29,34 @@ require("packer").startup(function(use)
 		{'L3MON4D3/LuaSnip'},             -- Required
 		{'rafamadriz/friendly-snippets'}, -- Optional
   	},
-	use {"akinsho/toggleterm.nvim", tag = '*' },
 	use "jhlgns/naysayer88.vim",
 	use "terrortylor/nvim-comment",
 	use "CreaturePhil/vim-handmade-hero",
 	use "yasuhiroki/github-actions-yaml.vim",
 	use "hashivim/vim-terraform",
 	use "towolf/vim-helm",
-	use "ekalinin/Dockerfile.vim"
-}
+	use "ekalinin/Dockerfile.vim",
+	use "Pocco81/auto-save.nvim",
+	}
 end)
 
+-- Ignore arrow to learn to ot use them
+vim.keymap.set("n","<Up>","<NOP>")
+vim.keymap.set("n","<Down>","<NOP>")
+vim.keymap.set("n","<Right>","<NOP>")
+vim.keymap.set("n","<Left>","<NOP>")
+
+vim.keymap.set("n",";",":")
 vim.keymap.set("n","<leader>r", ":GoRename<CR>")
 vim.keymap.set("n", "<C-S>", ":w<CR>")
-vim.keymap.set("n", "<C-e>", ":Ex<CR>")
-
+vim.keymap.set("n", "<leader>e", ":Ex<CR>")
 -- split screen
 vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true })
 -- navigate between tabs
 vim.keymap.set("n", "<leader>h", ":wincmd h<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>l", ":wincmd l<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>j", ":wincmd j<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>k", ":wincmd k<CR>", { noremap = true })
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>,', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -69,7 +77,7 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 -- TREESITTER
 require'nvim-treesitter.configs'.setup {
-	ensure_installed = {"c", "lua", "vim", "go", "javascript", "typescript", "rust","python"},
+	ensure_installed = {"lua", "vim", "go", "javascript", "typescript", "rust","python"},
 	highlight = {
 		enable = true,
 	}
@@ -92,7 +100,9 @@ require("lualine").setup{
 		section_separators = "",
 	},
 }
-
+require("auto-save").setup {
+	-- Use defaults
+}
 -- LSP
 local lsp = require("lsp-zero")
 
